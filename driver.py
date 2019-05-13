@@ -25,7 +25,7 @@ num_states = (env.observation_space.high - env.observation_space.low) * np.array
 num_states = np.round(num_states, 0).astype(int) + 1
 
 # Создаем Q массив (трехмерный массив 15x19x3)
-Q = np.random.uniform(-1, 1, size=(num_states[0], num_states[1], env.action_space.n))
+Q = np.zeros([num_states[0], num_states[1], env.action_space.n])
 
 # Расчитаем велечеину для уменьшения эпсилон
 reduction = (epsilon - min_eps) / episodes
